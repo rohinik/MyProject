@@ -57,27 +57,13 @@ public class MyActivityTest {
   }
 
   @Test
-  public void shouldHideUserNameErrorFieldOnTouchEventOfUserName() throws Exception {
-    userName.setText("");
-    password.setText("da");
-    signIn.performClick();
-    assertThat(userNameError.getVisibility(), equalTo(View.VISIBLE));
-    assertThat(passwordError.getVisibility(), equalTo(View.INVISIBLE));
-    assertThat(userNameError.getText().toString(), equalTo("Enter valid username"));
-    userName.requestFocus();
-    assertThat(userNameError.getVisibility(), equalTo(View.GONE));
-
+  public void shouldShowErrorIfPasswordFieldIsEmpty() throws Exception {
   }
 
   @Test
-  public void shouldShowErrorIfPasswordFieldIsEmpty() throws Exception {
-    userName.setText("adfsa");
-    password.setText("");
-    signIn.performClick();
-    assertThat(userNameError.getVisibility(), equalTo(View.INVISIBLE));
-    assertThat(passwordError.getVisibility(), equalTo(View.VISIBLE));
-    assertThat(passwordError.getText().toString(), equalTo("Enter valid password"));
+  public void shouldHideUserNameErrorFieldOnTouchEventOfUserName() throws Exception {
   }
+
 
   @Test
   public void shouldStartLoginCompleteFulActivityIfLoginCredentialsAreValid() throws Exception {
